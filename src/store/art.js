@@ -8,13 +8,13 @@ const GET_ARTWORK = 'GET_ARTWORK';
 
 const getArtwork = art => ({type: GET_ARTWORK, art})
 
-export const fetchArt = () => (dispatch) => {
-  axios.get(baseUrl + '&keyword=happy&' + key)
+export const fetchArt = (mood) => (dispatch) => {
+  axios.get(baseUrl + `&keyword=${mood}&sort=random&size=1&` + key)
   .then(res => dispatch(getArtwork(res.data)))
   .catch(err => console.error(err))
 }
 
-export default function reducer(art = [], action) {
+export default function reducer(art = {}, action) {
   switch (action.type) {
     case GET_ARTWORK:
       return action.art

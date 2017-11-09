@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux'
+import {Router} from 'react-router'
+import {Route, Switch} from 'react-router-dom'
+import history from './history'
 import Art from './Art'
+import Form from './Form'
 import {fetchArt} from './store/art'
 
 class App extends Component {
@@ -10,12 +14,17 @@ class App extends Component {
   }
   render() {
     return (
+    <Router history={history}>
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Art />
+          <Switch>
+            <Route path="/art" component={Art} />
+            <Route path="/" component={Form} />
+          </Switch>
       </div>
+      </Router>
     );
   }
 }
