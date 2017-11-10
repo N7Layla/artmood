@@ -10,14 +10,14 @@ import {fetchArt} from './store/art'
 
 class App extends Component {
   componentWillMount() {
-    this.props.fetchArt()
+    //this.props.fetchArt()
   }
   render() {
     return (
     <Router history={history}>
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">ARTmood</h1>
         </header>
           <Switch>
             <Route path="/art" component={Art} />

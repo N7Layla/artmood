@@ -1,3 +1,8 @@
+body {
+  background-color: #000000;
+  color: #f0f0f0;
+}
+
 .App {
   text-align: center;
 }
@@ -21,6 +26,15 @@
 
 .App-intro {
   font-size: large;
+}
+
+.form-text {
+  font-size: xx-large;
+}
+
+.form-input {
+  font-size: xx-large;
+  background-color: #000000;
 }
 
 @keyframes App-logo-spin {

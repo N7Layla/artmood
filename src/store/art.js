@@ -9,7 +9,8 @@ const GET_ARTWORK = 'GET_ARTWORK';
 const getArtwork = art => ({type: GET_ARTWORK, art})
 
 export const fetchArt = (mood) => (dispatch) => {
-  axios.get(baseUrl + `&keyword=${mood}&sort=random&size=1&` + key)
+  console.log("mood=", mood)
+  axios.get(baseUrl + `&keyword=${mood}&sort=random&hasimage=1&size=1&` + key)
   .then(res => dispatch(getArtwork(res.data)))
   .catch(err => console.error(err))
 }
