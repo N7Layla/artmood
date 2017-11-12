@@ -1,7 +1,7 @@
 import axios from 'axios';
 //import {key} from '../secret';
 
-let secret = KEY;
+let secret = process.env['KEY'];
 
 const baseUrl = 'https://api.harvardartmuseums.org/object?hasimage=1&sort=random'
 
@@ -14,6 +14,7 @@ const getColor = art => ({type: GET_COLOR, art})
 export const fetchArt = (mood) => (dispatch) => {
   //&size=1
   console.log("mood=", mood)
+  console.log(secret)
   axios.get(baseUrl + `&keyword=${mood}&` + secret)
   .then(res => dispatch(getArtwork(res.data.records.filter(piece => piece.images.length > 0))))
   .catch(err => console.error(err))
