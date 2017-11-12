@@ -1,7 +1,7 @@
 import axios from 'axios';
-import {key} from '../secret';
+//import {key} from '../secret';
 
-let secret = key || process.env.KEY;
+let secret = process.env.KEY;
 
 const baseUrl = 'https://api.harvardartmuseums.org/object?hasimage=1&sort=random'
 
