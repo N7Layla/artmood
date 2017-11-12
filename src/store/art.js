@@ -1,6 +1,8 @@
 import axios from 'axios';
 import {key} from '../secret';
 
+key = key || process.env.key;
+
 const baseUrl = 'https://api.harvardartmuseums.org/object?hasimage=1&sort=random'
 
 const GET_ARTWORK = 'GET_ARTWORK';
