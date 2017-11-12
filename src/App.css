@@ -47,8 +47,12 @@ a {
 .form-input {
   font-size: xx-large;
   background-color: #000000;
-  color: red;
   font-style: italic;
+}
+
+.color-input {
+  border: 0;
+  padding: 0.5em;
 }
 
 .art-caption {

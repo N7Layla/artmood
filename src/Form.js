@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import {fetchArt, fetchColor} from './store/art'
 import Art from './Art'
 
@@ -41,7 +42,7 @@ class Form extends Component {
           <div><label className="form-text"> I am feeling </label> <TextField underlineStyle={style.underlineStyle} inputStyle={style.inputStyle} style={style} className="form-input" name="mood" type="text" /> <label className="form-text"> today.</label></div>
           <div><RaisedButton label="Get Art" type="submit" value="Submit" style={style.buttonStyle} primary={true} /></div>
         </form>
-        <form onSubmit={this.handleColorSubmit}><label>Or, search by color: </label><input name="colorpicker" className="jscolor" /><input type="submit" value="Submit" /></form>
+        <form onSubmit={this.handleColorSubmit}><label>Or, try your luck searching by color: </label><input name="colorpicker" className="jscolor color-input" /><FlatButton label="Submit" type="submit" value="Submit" secondary={true} /></form>
         <Art />
       </div>
     )
