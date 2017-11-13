@@ -11,8 +11,6 @@ const getArtwork = art => ({type: GET_ARTWORK, art})
 const getColor = art => ({type: GET_COLOR, art})
 
 export const fetchArt = (mood) => (dispatch) => {
-  console.log("mood=", mood)
-  console.log("env=", process.env)
   axios.get(baseUrl + `&keyword=${mood}&` + process.env.REACT_APP_KEY)
   .then(res => dispatch(getArtwork(res.data.records.filter(piece => piece.images.length > 0))))
   .catch(err => console.error(err))
