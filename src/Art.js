@@ -5,6 +5,15 @@ import {fetchArt} from './store/art'
 import FlatButton from 'material-ui/FlatButton';
 
 class Art extends Component {
+  constructor() {
+    super()
+    //this.tweet = this.tweet.bind(this)
+  }
+
+  // tweet() {
+  //   window.open(tweetUrl);
+  // }
+
   render() {
     const style = {
       button: {
@@ -14,7 +23,7 @@ class Art extends Component {
     console.log("props", this.props.art)
     let art = this.props.art
     let piece = art[Math.floor(Math.random() * art.length)]
-    console.log(piece)
+    let tweetUrl = 'https://twitter.com/intent/tweet?text=' + 'Check out this art: '
     return (
         <div className="App-intro">
         { piece ?
@@ -30,6 +39,7 @@ class Art extends Component {
         </div>
            : <br />
         }
+        <div><FlatButton style={style.button} onClick={() => window.open(tweetUrl + "'" + piece.title + "' by " + piece.people[0].name + " " + piece.url + " " + '&image=' + piece.images[0].baseimageurl)}>Tweet</FlatButton></div>
         </div>
     )
   }

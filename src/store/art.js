@@ -1,7 +1,6 @@
 import axios from 'axios';
-import {key} from '../secret';
+//import {key} from '../secret';
 
-//let secret = process.env['KEY'];
 
 const baseUrl = 'https://api.harvardartmuseums.org/object?hasimage=1&sort=random'
 
@@ -12,9 +11,9 @@ const getArtwork = art => ({type: GET_ARTWORK, art})
 const getColor = art => ({type: GET_COLOR, art})
 
 export const fetchArt = (mood) => (dispatch) => {
-  //&size=1
   console.log("mood=", mood)
-  axios.get(baseUrl + `&keyword=${mood}&` + key)
+  console.log("env=", process.env)
+  axios.get(baseUrl + `&keyword=${mood}&` + process.env.REACT_APP_KEY)
   .then(res => dispatch(getArtwork(res.data.records.filter(piece => piece.images.length > 0))))
   .catch(err => console.error(err))
 }
@@ -22,7 +21,7 @@ export const fetchArt = (mood) => (dispatch) => {
 export const fetchColor = (color) => (dispatch) => {
   console.log("color=", color)
   color = "#" + color.toLowerCase();
-  axios.get(baseUrl + "&color=any&size=50&" + key)
+  axios.get(baseUrl + "&color=any&size=50&" + process.env.REACT_APP_KEY)
   .then(res => dispatch(getColor(res.data.records.filter(piece => piece.colors.some(col => col.css3 === color) && piece.images.length > 0))))
   .catch(err => console.error(err))
 }
