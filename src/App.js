@@ -23,7 +23,7 @@ class App extends Component {
       <div className="App">
           <header className="App-header" style={style}>
             <h1 className="App-title">ARTmood</h1>
-            <h2 className="App-byline">Project by Layla Hedges</h2>
+            <h2 className="App-byline">Project by Layla Hedges • <a href="https://github.com/N7Layla/artmood">GitHub</a></h2>
           </header>
             <Switch>
               <Route path="/art" component={Art} />
