@@ -1,7 +1,8 @@
-ARTmood
+##ARTmood
 
-Project by Layla Hedges
+#Project by Layla Hedges
 
-View Live Site: https://art-mood.herokuapp.com/
+Utilizes React, Redux, [Harvard Art Museums' API](https://www.harvardartmuseums.org/collections/api)
 
-Utilizes Harvard Art Museums' API: https://www.harvardartmuseums.org/collections/api
+Try [Live Site](https://laylawrote.com/artmood)
+
